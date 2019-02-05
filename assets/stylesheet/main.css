@@ -1,0 +1,66 @@
+@import url("base.css");
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+button, input {
+  border: 0;
+  outline: 0;
+  overflow: hidden;
+  background-color: transparent; }
+
+a {
+  color: #f3f3f3; }
+
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5); }
+
+body {
+  text-align: center; }
+
+header {
+  font-size: 40px; }
+
+.todo-sec {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid #999;
+  border-bottom: none; }
+
+.input-box {
+  border-bottom: 1px solid #999; }
+  .input-box .main-input {
+    width: 90%;
+    font-size: 34px; }
+  .input-box .add-btn {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.5s ease-out; }
+  .input-box .add-btn:hover {
+    color: red;
+    transform: rotate(180deg); }
+
+.todo-list {
+  margin: 0;
+  padding: 0; }
+
+.todoTask {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  font-size: 32px;
+  padding: 5px 10px;
+  border-bottom: 1px solid #999; }
+  .todoTask .drag-txt {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    right: -21%;
+    transform: translate(-50%, -50%); }
+
+.todoTask:hover .drag-text {
+  right: 0;
+  color: red; }
+
+/*# sourceMappingURL=main.css.map */
