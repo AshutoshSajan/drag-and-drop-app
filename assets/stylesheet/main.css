@@ -15,19 +15,31 @@ a {
   color: rgba(0, 0, 0, 0.5); }
 
 body {
-  text-align: center; }
+  text-align: center;
+  background-color: #0072ff; }
 
 header {
-  font-size: 40px; }
+  font-size: 30px; }
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element; }
+
+.draggable:hover:after {
+  transform: translate(0); }
 
 .todo-sec {
   width: 500px;
-  margin: 0 auto;
-  border: 1px solid #999;
-  border-bottom: none; }
+  margin: 0 auto; }
 
 .input-box {
-  border-bottom: 1px solid #999; }
+  border: 1px solid #fff;
+  padding: 5px 0; }
   .input-box .main-input {
     width: 90%;
     font-size: 34px; }
@@ -38,29 +50,35 @@ header {
     cursor: pointer;
     transition: transform 0.5s ease-out; }
   .input-box .add-btn:hover {
-    color: red;
+    color: darkred;
     transform: rotate(180deg); }
 
 .todo-list {
   margin: 0;
   padding: 0; }
+  .todo-list .over {
+    transform: scale(1.1, 1.1); }
 
 .todoTask {
   width: 100%;
   text-align: left;
   position: relative;
   font-size: 32px;
-  padding: 5px 10px;
-  border-bottom: 1px solid #999; }
+  padding: 10px 10px;
+  margin: 10px 0;
+  color: #333;
+  background-color: #f3f3f3; }
   .todoTask .drag-txt {
     font-size: 20px;
     position: absolute;
+    color: #0072ff;
     top: 50%;
     right: -21%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    transition: transform 300ms ease-out; }
 
-.todoTask:hover .drag-text {
-  right: 0;
-  color: red; }
+.todoTask:hover .drag-txt {
+  transform: translate(-160%, -50%);
+  display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */

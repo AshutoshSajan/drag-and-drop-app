@@ -27,20 +27,36 @@ a {
 // ===============================
 body {
 	text-align: center;
+	background-color: #0072ff;
 }
 
 header {
-	font-size: 40px;
+	font-size: 30px;
 }
+// ===================================================
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.draggable:hover:after {
+	transform: translate(0);
+}
+
+// ===================================================
 
 .todo-sec {
 	width: 500px;
 	margin: 0 auto;
-	border: 1px solid #999;
-	border-bottom: none;
 }
 .input-box {
-	border-bottom: 1px solid #999;
+	border: 1px solid #fff;
+	padding: 5px 0;
 
 	.main-input {
 		width: 90%;
@@ -54,7 +70,7 @@ header {
 		transition: transform 0.5s ease-out;
 	}
 	.add-btn:hover {
-		color: red;
+		color: darkred;
 		transform: rotate(180deg);
 	}
 }
@@ -63,6 +79,9 @@ header {
 	margin: 0;
 	padding: 0;
 
+	.over {
+		transform: scale(1.1, 1.1);
+	}
 }
 
 .todoTask {
@@ -70,21 +89,63 @@ header {
 	text-align: left;
 	position: relative;
 	font-size: 32px;
-	padding: 5px 10px;
-	border-bottom: 1px solid #999;
+	padding: 10px 10px;
+	margin: 10px 0;
+	color: #333;
+	background-color: #f3f3f3;
 
 	.drag-txt {
 		font-size: 20px;
 		position: absolute;
+		color: #0072ff;
 		top: 50%;
 		right: -21%;
 		transform: translate(-50%, -50%);
-		// background-color: green;
+		transition: transform 300ms ease-out;
 	}
+
+}
+.todoTask:hover .drag-txt{
+	transform: translate(-160%, -50%);
+	display: inline-block;
 }
 
-.todoTask:hover .drag-text{
-	right: 0;
-	// transform: translate(70%);
-	color: red;
-}
+
+
+
+// =========================
+// body ul .draggable {
+//   will-change: transform;
+//   font-family: "Raleway", sans-serif;
+//   font-weight: 800;
+//   height: 50px;
+//   list-style-type: none;
+//   margin: 10px;
+//   background-color: white;
+//   color: #0072ff;
+//   width: 250px;
+//   line-height: 3.2;
+//   padding-left: 10px;
+//   cursor: move;
+//   transition: all 200ms;
+//   user-select: none;
+//   margin: 10px auto;
+//   position: relative;
+// }
+// body ul .draggable:after {
+//   content: 'drag me';
+//   right: 7px;
+//   font-size: 10px;
+//   position: absolute;
+//   cursor: pointer;
+//   line-height: 5;
+//   transition: all 200ms;
+//   transition-timing-function: cubic-bezier(0.48, 0.72, 0.62, 1.5);
+//   transform: translateX(120%);
+//   opacity: 0;
+// }
+// body ul .draggable:hover:after {
+//   opacity: 1;
+//   transform: translate(0);
+// }
+
